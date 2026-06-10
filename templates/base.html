@@ -1,0 +1,267 @@
+{% load static %}
+ 
+ 
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content>
+        <meta name="author" content>
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <title>هگزاشاپ</title>
+
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" type="text/css"
+            href="{% static 'assets/css/bootstrap.min.css'%}">
+
+        <link rel="stylesheet" type="text/css"
+            href="{% static 'assets/css/font-awesome.css'%}">
+
+        <link rel="stylesheet"
+            href="{% static 'assets/css/templatemo-hexashop.css'%}">
+
+        <link rel="stylesheet"
+            href="{% static 'assets/css/templatemo-hexashop.css'%}">
+
+        <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
+
+        <link rel="stylesheet" href="{% static 'assets/css/fonts.css'%}">
+        <!--
+
+           <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+-->
+    </head>
+
+    <body>
+
+        >
+
+        <!-- ***** Header Area Start ***** -->
+       
+        <!-- ***** Header Area End ***** -->
+
+        <!-- ***** Main Banner Area Start ***** -->
+
+ <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+<style>
+
+.trap-logo{
+    position: relative;
+
+    font-family: 'Rubik Mono One', sans-serif;
+
+    font-size: 34px;
+
+    color: #ff1a1a;
+
+    letter-spacing: 1px;
+
+    -webkit-text-stroke: 1px black;
+
+    text-shadow:
+    0 0 5px #ff0000,
+    2px 2px 0 black;
+}
+
+</style>
+
+
+
+<div class="logo" style="margin-left:-40px;">
+
+    <a href="/" style="
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    ">
+
+        <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+             alt="logo"
+
+             style="
+             width:55px;
+             height:55px;
+
+             margin-right:10px;
+
+             object-fit:cover;
+             border-radius:8px;
+             ">
+
+
+        <span class="trap-logo">
+
+            TRAP SHOP
+
+        </span>
+
+    </a>
+
+</div>
+                            </a>
+<title>{% block title %} {% endblock %}</title>
+                            <ul class="nav">
+
+                                {% if user.is_authenticated %}
+                                <li class="profile-box">
+
+                                    {% if user.profile.image %}
+                                    <img src="{{ user.profile.image.url }}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% else %}
+                                    <img src="{% static 'assets/images/images (2).jpg' %}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% endif %}
+
+                                    <span>{{ user.username }}</span>
+                                    <a href="{% url 'logout' %}"
+                                        class="logout-btn">Logout</a>
+
+                                </li>
+                                {% endif %}
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'nike' %}">nike</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'prof' %}">trap</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'contact' %}">contact</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'about' %}">about</a></li>
+
+                                        
+
+                                {% if not user.is_authenticated %}
+                                <li class="scroll-to-section">
+                                    <a href="{% url 'login' %}">Login/regaster</a>
+                                </li>
+                                {% endif %}
+
+                                <li class="submenu">
+                                    <a href="javascript:;">صفحات</a>
+                                    <ul>
+                                        <li><a href="{% url 'contact'%}">درباره
+                                                ما</a></li>
+                                        <li><a href="kala/prof/">محصولات</a></li>
+                                        <li><a href="{% url 'about'%}">my call</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:;">ویژگی ها</a>
+                                    <ul>
+                                        <li><a href="#">صفحه ویژگی 1</a></li>
+                                        <li><a href="#">صفحه ویژگی 2</a></li>
+                                        <li><a href="#">صفحه ویژگی 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="scroll-to-section"><a
+                                        href="#explore">کاوش</a></li>
+                           
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>منو</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+    {% block contect %}
+
+
+
+
+
+    {% endblock %}
+
+
+
+
+
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="first-item text-right">
+<div class="logo">
+    <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+         alt="logo"
+         style="width:90px; height:90px; object-fit:cover; border-radius:10px;">
+</div>
+                            <ul>
+                                <li><a href="#">ایران ، تهران ، کریم
+                                        خان</a></li>
+                                <li><a href="#">hexashop@company.com</a></li>
+                                <li><a href="#">061_34-452</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-right">
+                        <h4>خريد و دسته بندی</h4>
+                        <ul>
+                            <li><a href="kala/prof">فروش مردانه</a></li>
+                            <li><a href="#women">فروش زنانه</a></li>
+                            <li><a href="#kids">فروش کودکانه</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-right">
+                        <h4>لینک های مفید</h4>
+                        <ul>
+                            <li><a href="">خانه</a></li>
+                            <li><a href="{% url 'about' %}">درباره ما</a></li>
+                            <li><a href="#">راهنمایی</a></li>
+                            <li><a href="{% url 'about' %}"></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-right">
+                        <h4>راهنمایی و اطلاعات</h4>
+                        <ul>
+                            <li><a href="#">راهنمایی</a></li>
+                            <li><a href="#">سوالات متداول</a></li>
+                            <li><a href="#">حمل دریایی</a></li>
+                            <li><a href="#">شناسه پیگیری</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="under-footer">
+                            <p>
+                                کلیه حقوق محفوظ است
+                            </p>
+                            <ul>
+                                <li><a href="#"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i
+                                            class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/sepi__en/"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                                <li><a href=""><i
+                                            class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>

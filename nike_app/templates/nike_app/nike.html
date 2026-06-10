@@ -1,0 +1,303 @@
+{% load humanize %}
+ 
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>هگزاشاپ - لیست محصولات</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css'%}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-hexashop.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/fonts.css'%}">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+     <!-- ***** Header Area Start ***** -->
+     <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+         <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+<style>
+
+.trap-logo{
+    position: relative;
+
+    font-family: 'Rubik Mono One', sans-serif;
+
+    font-size: 34px;
+
+    color: #ff1a1a;
+
+    letter-spacing: 1px;
+
+    -webkit-text-stroke: 1px black;
+
+    text-shadow:
+    0 0 5px #ff0000,
+    2px 2px 0 black;
+}
+
+</style>
+
+
+
+<div class="logo" style="margin-left:-40px;">
+
+    <a href="/" style="
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    ">
+
+        <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+             alt="logo"
+
+             style="
+             width:55px;
+             height:55px;
+
+             margin-right:10px;
+
+             object-fit:cover;
+             border-radius:8px;
+             ">
+
+
+        <span class="trap-logo">
+
+            TRAP SHOP
+
+        </span>
+
+    </a>
+
+</div>
+<title>{% block title %} {% endblock %}</title>
+                            <ul class="nav">
+                            <li class="scroll-to-section"><a href="/" class="active">خانه</a></li>
+                            <li class="scroll-to-section"><a href="ww">trap</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'contact'%}">contact</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'about'%}">درباره شرکت ما</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'login'%}">Login/regaster</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">صفحات</a>
+                                <ul>
+                                    <li><a href="about.html">درباره ما</a></li>
+                                    <li><a href="products.html">محصولات</a></li>
+                                    <li><a href="single-product.html">محصول منفرد</a></li>
+                                    <li><a href="contact.html">تماس با ما</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">ویژگی ها</a>
+                                <ul>
+                                    <li><a href="#">صفحه ویژگی 1</a></li>
+                                    <li><a href="#">صفحه ویژگی 2</a></li>
+                                    <li><a href="#">صفحه ویژگی 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="index.html#explore">کاوش</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>منو</span>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+<section id="products-section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🔥 New Nike Collection</h2>
+            <p>جدیدترین کفش‌های حرفه‌ای و خاص</p>
+        </div>
+
+        <div class="products-grid">
+
+            {% for i in nikies %}
+
+            <div class="shoe-card">
+
+                <div class="shoe-image">
+
+                    <!-- عکس کفش -->
+                    <img src="{{ i.image.url }}" alt="{{ i.title }}">
+
+                    <!-- glow -->
+                    <div class="shoe-glow"></div>
+
+                </div>
+
+                <div class="shoe-info">
+
+                    <h3 class="product-title">{{ i.title }}</h3>
+
+                    <div class="size-box">
+                        سایز :
+                        <span>{{ i.size }}</span>
+                    </div>
+                  <div class="price-box">
+                     {{ i.ghymat|intcomma }}
+                        <span>تومان</span>
+                       </div>
+                     <a href="{% url 'kharid' i.id%}"
+                   class="buy-btn">kharid mahsol</a>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="first-item text-right">
+<div class="logo">
+    <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+         alt="logo"
+         style="width:90px; height:90px; object-fit:cover; border-radius:10px;">
+</div>
+                            <ul>
+                                <li><a href="#">khozestan,ahvaz
+                                     home</a></li>
+                                <li><a href="#">sepehrbaghri1385.1386@gmail.com/a></li>
+                                <li><a href="#">061_431_21</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-right">
+                        <h4>خريد و دسته بندی</h4>
+                        <ul>
+                            <li><a href="#">فروش مردانه</a></li>
+                            <li><a href="#women">فروش زنانه</a></li>
+                            <li><a href="#">فروش کودکانه</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-right">
+                        <h4>لینک های مفید</h4>
+                        <ul>
+                            <li><a href="#">خانه</a></li>
+                            <li><a href="{% url 'about' %}">درباره ما</a></li>
+                            <li><a href="#">راهنمایی</a></li>
+                            <li><a href="#">تماس با ما</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-right">
+                        <h4>راهنمایی و اطلاعات</h4>
+                        <ul>
+                            <li><a href="#">راهنمایی</a></li>
+                            <li><a href="#">سوالات متداول</a></li>
+                            <li><a href="#">حمل دریایی</a></li>
+                            <li><a href="#">شناسه پیگیری</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="under-footer">
+                            <p>
+                                کلیه حقوق محفوظ است
+                            </p>
+                            <ul>
+                                <li><a href="#"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i
+                                            class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i
+                                            class="fa fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js'%}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/popper.js'%}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assets/js/owl-carousel.js'%}"></script>
+    <script src="{% static 'assets/js/accordions.js'%}"></script>
+    <script src="{% static 'assets/js/datepicker.js'%}"></script>
+    <script src="{% static 'assets/js/scrollreveal.min.js'%}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js'%}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js'%}"></script>
+    <script src="{% static  'assets/js/imgfix.min.js'%}"></script> 
+    <script src="{% static 'assets/js/slick.js'%}"></script> 
+    <script src="{% static 'assets/js/lightbox.js'%}"></script> 
+    <script src="{% static 'assets/js/isotope.js'%}"></script> 
+    
+    <!-- Global Init -->
+    <script src="{% static 'assets/js/custom.js '%}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+
+</html>

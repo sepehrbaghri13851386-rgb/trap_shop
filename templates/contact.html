@@ -1,0 +1,246 @@
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>هگزاشاپ - تماس با ما</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css'%}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-hexashop.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/fonts.css'%}">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+   <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+<style>
+
+.trap-logo{
+    position: relative;
+
+    font-family: 'Rubik Mono One', sans-serif;
+
+    font-size: 34px;
+
+    color: #ff1a1a;
+
+    letter-spacing: 1px;
+
+    -webkit-text-stroke: 1px black;
+
+    text-shadow:
+    0 0 5px #ff0000,
+    2px 2px 0 black;
+}
+
+</style>
+
+
+
+<div class="logo" style="margin-left:-40px;">
+
+    <a href="/" style="
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    ">
+
+        <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+             alt="logo"
+
+             style="
+             width:55px;
+             height:55px;
+
+             margin-right:10px;
+
+             object-fit:cover;
+             border-radius:8px;
+             ">
+
+
+        <span class="trap-logo">
+
+            TRAP SHOP
+
+        </span>
+
+    </a>
+
+</div>
+                            </a>
+<title>{% block title %} {% endblock %}</title>
+                            <ul class="nav">
+
+                                {% if user.is_authenticated %}
+                                <li class="profile-box">
+
+                                    {% if user.profile.image %}
+                                    <img src="{{ user.profile.image.url }}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% else %}
+                                    <img src="{% static 'assets/images/images (2).jpg' %}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% endif %}
+
+                                    <span>{{ user.username }}</span>
+                                    <a href="{% url 'logout' %}"
+                                        class="logout-btn">Logout</a>
+
+                                </li>
+                                {% endif %}
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'nike' %}">nike</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'prof' %}">trap</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'contact' %}">contact</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'about' %}">about</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'nike' %}">nike</a></li>
+                                        
+
+                                {% if not user.is_authenticated %}
+                                <li class="scroll-to-section">
+                                    <a href="{% url 'login' %}">Login/regaster</a>
+                                </li>
+                                {% endif %}
+
+                                <li class="submenu">
+                                    <a href="javascript:;">صفحات</a>
+                                    <ul>
+                                        <li><a href="{% url 'contact'%}">درباره
+                                                ما</a></li>
+                                        <li><a href="kala/prof/">محصولات</a></li>
+                                        <li><a href="{% url 'about'%}">my call</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:;">ویژگی ها</a>
+                                    <ul>
+                                        <li><a href="#">صفحه ویژگی 1</a></li>
+                                        <li><a href="#">صفحه ویژگی 2</a></li>
+                                        <li><a href="#">صفحه ویژگی 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="scroll-to-section"><a
+                                        href="#explore">کاوش</a></li>
+                           
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>منو</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading about-page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2 style="color: red; font-weight: bold; text-shadow: 1px 1px 2px #000;">
+  TRAP SHOP
+</h2>
+
+                        <span>989928784959</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Contact Area Starts ***** -->
+    <div class="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90186.37207676383!2d-80.13495239500924!3d25.9317678710111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9ad1877e4a82d%3A0xa891714787d1fb5e!2sPier%20Park!5e1!3m2!1sen!2sth!4v1637512439384!5m2!1sen!2sth" width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                      <!-- You can simply copy and paste "Embed a map" code from Google Maps for any location. -->
+                      
+                    </div>
+                </div>
+                <div class="col-lg-6 text-right">
+<div class="section-heading">
+    <h2>سلام برسان. خجالتی نباش!</h2>
+    <span>جزئیات مربوط به جزئیات همان چیزی است که هگزاشوپ را با مضامین دیگر متفاوت می کند.</span>
+</div>
+
+<form id="contact" action="" method="post">
+    {% csrf_token %}
+    
+    <div class="row">
+        <div class="col-lg-6">
+            <fieldset>
+                <input name="name" type="text" id="name" placeholder="نام شما" required>
+            </fieldset>
+        </div>
+
+        <div class="col-lg-6">
+            <fieldset>
+                <input name="email" type="email" id="email" placeholder="ایمیل شما" required>
+            </fieldset>
+        </div>
+
+        <div class="col-lg-12">
+            <fieldset>
+                <textarea name="message" rows="6" id="message" placeholder="پیام شما" required></textarea>
+            </fieldset>
+        </div>
+
+        <div class="col-lg-12">
+            <fieldset>
+                <button type="submit" id="form-submit" class="main-dark-button">
+                    <i class="fa fa-paper-plane send"></i>
+                </button>
+            </fieldset>
+        </div>
+    </div>
+</form>
+    </div>
+
+ 

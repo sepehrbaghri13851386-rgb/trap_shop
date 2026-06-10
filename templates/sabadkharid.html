@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+{% block contect %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content>
+        <meta name="author" content>
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <title>هگزاشاپ</title>
+
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" type="text/css"
+            href="{% static 'assets/css/bootstrap.min.css'%}">
+
+        <link rel="stylesheet" type="text/css"
+            href="{% static 'assets/css/font-awesome.css'%}">
+
+        <link rel="stylesheet"
+            href="{% static 'assets/css/templatemo-hexashop.css'%}">
+
+        <link rel="stylesheet"
+            href="{% static 'assets/css/templatemo-hexashop.css'%}">
+
+        <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
+
+        <link rel="stylesheet" href="{% static 'assets/css/fonts.css'%}">
+        <!--
+
+           <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+-->
+    </head>
+
+    <body>
+
+        >
+
+        <!-- ***** Header Area Start ***** -->
+       
+        <!-- ***** Header Area End ***** -->
+
+        <!-- ***** Main Banner Area Start ***** -->
+
+ <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+<style>
+
+.trap-logo{
+    position: relative;
+
+    font-family: 'Rubik Mono One', sans-serif;
+
+    font-size: 34px;
+
+    color: #ff1a1a;
+
+    letter-spacing: 1px;
+
+    -webkit-text-stroke: 1px black;
+
+    text-shadow:
+    0 0 5px #ff0000,
+    2px 2px 0 black;
+}
+
+</style>
+
+
+
+<div class="logo" style="margin-left:-40px;">
+
+    <a href="/" style="
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    ">
+
+        <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+             alt="logo"
+
+             style="
+             width:55px;
+             height:55px;
+
+             margin-right:10px;
+
+             object-fit:cover;
+             border-radius:8px;
+             ">
+
+
+        <span class="trap-logo">
+
+            TRAP SHOP
+
+        </span>
+
+    </a>
+
+</div>
+                            </a>
+<title>{% block title %} {% endblock %}</title>
+                            <ul class="nav">
+
+                                {% if user.is_authenticated %}
+                                <li class="profile-box">
+
+                                    {% if user.profile.image %}
+                                    <img src="{{ user.profile.image.url }}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% else %}
+                                    <img src="{% static 'assets/images/images (2).jpg' %}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% endif %}
+
+                                    <span>{{ user.username }}</span>
+                                    <a href="{% url 'logout' %}"
+                                        class="logout-btn">Logout</a>
+
+                                </li>
+                                {% endif %}
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'nike' %}">nike</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'prof' %}">trap</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'contact' %}">contact</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'about' %}">about</a></li>
+                                <li class="scroll-to-section"><a
+                                        href="{% url 'nike' %}">nike</a></li>
+
+                                {% if not user.is_authenticated %}
+                                <li class="scroll-to-section">
+                                    <a href="{% url 'login' %}">Login/regaster</a>
+                                </li>
+                                {% endif %}
+
+                                <li class="submenu">
+                                    <a href="javascript:;">صفحات</a>
+                                    <ul>
+                                        <li><a href="{% url 'contact'%}">درباره
+                                                ما</a></li>
+                                        <li><a href="kala/prof/">محصولات</a></li>
+                                        <li><a href="{% url 'about'%}">my call</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:;">ویژگی ها</a>
+                                    <ul>
+                                        <li><a href="#">صفحه ویژگی 1</a></li>
+                                        <li><a href="#">صفحه ویژگی 2</a></li>
+                                        <li><a href="#">صفحه ویژگی 3</a></li>
+                                    </ul>
+                                </li>
+                                <li class="scroll-to-section"><a
+                                        href="#explore">کاوش</a></li>
+                           
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>منو</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+<style>
+
+.cart-box{
+    width: 1000px;
+    max-width: 100%;
+    margin:230px auto;
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.cart-img img{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.cart-img img:hover{
+    transform:scale(1.08);
+}
+
+.cart-info{
+    flex:1;
+}
+
+.cart-info h2{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.cart-info p{
+    font-size:18px;
+    margin:6px 0;
+}
+
+.qty{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:15px;
+}
+
+.qty button{
+    width:35px;
+    height:35px;
+    border:none;
+    border-radius:8px;
+    background:#222;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.qty span{
+    font-size:20px;
+}
+
+.summary{
+    margin-top:30px;
+    border-top:1px solid #ddd;
+    padding-top:20px;
+}
+
+.summary div{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+    font-size:18px;
+}
+
+.buy-btn{
+    width:100%;
+    margin-top:20px;
+    border:none;
+    background:#111;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:red;
+}
+
+</style>
+
+<div class="cart-box">
+
+<div class="cart-item">
+
+<div class="cart-img">
+<img src="{{ product.image.url }}" alt="">
+</div>
+
+<div class="cart-info">
+
+<h2>{{ product.title }}</h2>
+
+<p>سایز : {{ product.size }}</p>
+
+<p>{{ total_price|intcomma }} تومان</p>
+
+<form method="post">
+{% csrf_token %}
+
+<div class="qty">
+
+<button name="action" value="plus">+</button>
+
+<span>{{ quantity }}</span>
+
+<button name="action" value="minus">-</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="summary">
+
+<div>
+<span>قیمت محصول</span>
+<span>{{ total_price|intcomma }} تومان</span>
+</div>
+
+<div>
+<span>هزینه ارسال</span>
+<span>۳۰,۰۰۰ تومان</span>
+</div>
+
+<div>
+<b>جمع کل</b>
+<b>{{ total_price|intcomma }} تومان</b>
+</div>
+
+</div>
+
+<button class="buy-btn">
+ادامه فرآیند خرید
+</button>
+
+</div>
+
+{% endblock %}

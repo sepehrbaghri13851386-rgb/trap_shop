@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ product.title }}</title>
+
+        <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            font-family: sans-serif;
+
+            background-image: url("{% static 'assets/images/572e02ef351fdec9c2057991d63e09e7.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box{
+            width: 500px;
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+        }
+
+.box h1{
+    margin-bottom: 25px;
+    font-size: 48px;
+    color: crimson;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+             text-shadow:
+             2px 2px 10px rgba(255,0,0,0.3),
+                 0 0 20px rgba(255,0,0,0.4);
+
+                    font-family: fantasy;
+                                         }
+
+        .box img{
+            width: 350px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .price{
+            margin-top: 20px;
+            font-size: 28px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .bottom{
+            margin-top: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bottom label{
+            font-size: 20px;
+        }
+
+        .bottom input{
+            width: 70px;
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .bottom button{
+            background: black;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .bottom button:hover{
+            background: crimson;
+            transform: scale(1.05);
+        }
+
+    </style>
+
+    </head>
+
+    <body>
+
+        <div class="box">
+
+            <h1>{{ product.title }}</h1>
+
+            <img src="{{ product.images.url }}">
+
+            <p class="price">
+                قیمت: {{ product.price }}
+            </p>
+
+            <div class="bottom">
+
+                <button>
+                    افزودن به سبد خرید
+                </button>
+
+                <label>تعداد:</label>
+
+                <input type="number" value="1" min="1">
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

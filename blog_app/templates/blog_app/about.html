@@ -1,0 +1,494 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>هگزاشاپ - درباره ما</title>
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css'%}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-hexashop.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/fonts.css'%}">
+<!--
+
+TemplateMo 571 Hexashop
+
+https://templatemo.com/tm-571-hexashop
+
+-->
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+     <!-- ***** Header Area Start ***** -->
+     <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+<style>
+
+.trap-logo{
+    position: relative;
+
+    font-family: 'Rubik Mono One', sans-serif;
+
+    font-size: 34px;
+
+    color: #ff1a1a;
+
+    letter-spacing: 1px;
+
+    -webkit-text-stroke: 1px black;
+
+    text-shadow:
+    0 0 5px #ff0000,
+    2px 2px 0 black;
+}
+
+</style>
+
+
+
+<div class="logo" style="margin-left:-40px;">
+
+    <a href="/" style="
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    ">
+
+        <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+             alt="logo"
+
+             style="
+             width:55px;
+             height:55px;
+
+             margin-right:10px;
+
+             object-fit:cover;
+             border-radius:8px;
+             ">
+
+
+        <span class="trap-logo">
+
+            TRAP SHOP
+
+        </span>
+
+    </a>
+
+</div>
+                        <title>{% block title %} {% endblock %}</title>
+                         <ul class="nav">
+
+                                {% if user.is_authenticated %}
+                                <li class="profile-box">
+
+                                    {% if user.profile.image %}
+                                    <img src="{{ user.profile.image.url }}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% else %}
+                                    <img src="{% static 'assets/images/images (2).jpg' %}"
+                                        width="40" height="40"
+                                        style="border-radius:50%;">
+                                    {% endif %}
+
+                                    <span>{{ user.username }}</span>
+                                    <a href="{% url 'logout' %}"
+                                        class="logout-btn">Logout</a>
+
+                                </li>
+                                {% endif %}
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="/" class="active">خانه</a></li>
+                            <li class="scroll-to-section"><a href="index.html#men">مردان</a></li>
+                            <li class="scroll-to-section"><a href="index.html#women">زنان</a></li>
+                            <li class="scroll-to-section"><a href="index.html#kids">بچه ها</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'prof'%}">trap</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'contact'%}">contact</a></li>
+                            <li class="scroll-to-section"><a href="{% url 'about'%}">درباره شرکت ما</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">صفحات</a>
+                                <ul>
+                                    <li><a href="about.html">درباره ما</a></li>
+                                    <li><a href="products.html">محصولات</a></li>
+                                    <li><a href="single-product.html">محصول منفرد</a></li>
+                                    <li><a href="contact.html">تماس با ما</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">ویژگی ها</a>
+                                <ul>
+                                    <li><a href="#">صفحه ویژگی 1</a></li>
+                                    <li><a href="#">صفحه ویژگی 2</a></li>
+                                    <li><a href="#">صفحه ویژگی 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="index.html#explore">کاوش</a></li>
+                        </ul>        
+                        <a class='menu-trigger'>
+                            <span>منو</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+     </header>
+     <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading about-page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <h2>about</h2>
+                        <span>لورم ایپسوم متن ساختگی با تولید سادگی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** About Area Starts ***** -->
+    <div class="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-image">
+                        <img src="{% static 'assets/images/about-left-image.jpg'%}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content text-right">
+                        <h4>درباره ما و مهارت های ما</h4>
+                        <span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </span>
+                        <div class="quote">
+                            <i class="fa fa-quote-right"></i><p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله.</p>
+                        </div>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آن چنان که لازم است.
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** About Area Ends ***** -->
+
+    <!-- ***** Our Team Area Starts ***** -->
+    <section class="our-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>تیم شگفت انگیز ما</h2>
+                        <span>جزئیات مربوط به جزئیات همان چیزی است که هگزاشوپ را با مضامین دیگر متفاوت می کند.</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/images/team-member-01.jpg'%}">
+                        </div>
+                        <div class="down-content">
+                            <h4>سارا پاشا</h4>
+                            <span>مراقب محصول</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/images/team-member-02.jpg'%}">
+                        </div>
+                        <div class="down-content">
+                            <h4>علی صفایی</h4>
+                            <span>مراقب محصول</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-item">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <img src="{% static 'assets/images/team-member-03.jpg'%}">
+                        </div>
+                        <div class="down-content">
+                            <h4>نیما مرادی</h4>
+                            <span>مراقب محصول</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Our Team Area Ends ***** -->
+{% for article in articles %}
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.description }}</p>
+    <img src="{{ article.image.url }}" alt="{{ article.title }}">
+{% endfor %}
+
+    <!-- ***** Services Area Starts ***** -->
+    <section class="our-services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>خدمات ما</h2>
+                        <span>جزئیات مربوط به جزئیات همان چیزی است که هگزاشوپ را با مضامین دیگر متفاوت می کند.</span>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>لورم ساختگی با تولید</h4>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                        <img src="{% static 'assets/images/service-01.jpg'%}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>تولید سادگی نامفهوم</h4>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                        <img src="{% static 'assets/images/service-02.jpg'%}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-item">
+                        <h4>لورم ایپسوم متن</h4>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+                        <img src="{% static 'assets/images/service-03.jpg'%}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Services Area Ends ***** -->
+
+    <!-- ***** Subscribe Area Starts ***** -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading text-right">
+                        <h2>با عضویت در خبرنامه ما می توانید 30 درصد تخفیف دریافت کنید</h2>
+                        <span>جزئیات تا جزئیات چیزی است که هگزاشاپ را از تم های دیگر متمایز می کند.</span>
+                    </div>
+                    <form id="subscribe" action="" method="get">
+                        <div class="row">
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="name" type="text" id="name" placeholder="نام شما" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="ایمیل شما" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-2">
+                            <fieldset class="text-right">
+                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane send"></i></button>
+                            </fieldset>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-6 text-right">
+                            <ul>
+                                <li>فروشگاه آدرس:<br><span>ایران ، تهران</span></li>
+                                <li>تلفن:<br><span>021-020-0340</span></li>
+                                <li>دفتر آدرس:<br><span>کریم خان</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 text-right">
+                            <ul>
+                                <li>ساعات کاری:<br><span>07:30 AM - 9:30 PM Daily</span></li>
+                                <li>ایمیل:<br><span>info@company.com</span></li>
+                                <li>شبکه های مجازی:<br><span><a href="#">فیسبوک</a>, <a href="#">اینستاگرام</a>, <a href="#">بیهانس</a>, <a href="#">لینکدین</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Subscribe Area Ends ***** -->
+
+   <!-- ***** Footer Start ***** -->
+   <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="first-item text-right">
+                    <div class="logo">
+                        <img src="{% static 'assets/images/white-logo.png'%}" alt="hexashop ecommerce templatemo">
+                    </div>
+                    <ul>
+                        <li><a href="#">ایران ، تهران ، کریم خان</a></li>
+                        <li><a href="#">hexashop@company.com</a></li>
+                        <li><a href="#">021-020-0340</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 text-right">
+                <h4>خريد و دسته بندی</h4>
+                <ul>
+                    <li><a href="#">فروش مردانه</a></li>
+                    <li><a href="#">فروش زنانه</a></li>
+                    <li><a href="#">فروش کودکانه</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 text-right">
+                <h4>لینک های مفید</h4>
+                <ul>
+                    <li><a href="#">خانه</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">راهنمایی</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 text-right">
+                <h4>راهنمایی و اطلاعات</h4>
+                <ul>
+                    <li><a href="#">راهنمایی</a></li>
+                    <li><a href="#">سوالات متداول</a></li>
+                    <li><a href="#">حمل دریایی</a></li>
+                    <li><a href="#">شناسه پیگیری</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-12">
+                <div class="under-footer">
+                    <p>
+                        کلیه حقوق محفوظ است 
+                    </p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+   </footer>
+    
+
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery-2.1.0.min.js'%}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'assets/js/popper.js'%}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+
+    <!-- Plugins -->
+    <script src="{% static 'assets/js/owl-carousel.js'%}"></script>
+    <script src="{% static 'assets/js/accordions.js'%}"></script>
+    <script src="{% static 'assets/js/datepicker.js'%}"></script>
+    <script src="{% static 'assets/js/scrollreveal.min.js'%}"></script>
+    <script src="{% static 'assets/js/waypoints.min.js'%}"></script>
+    <script src="{% static 'assets/js/jquery.counterup.min.js'%}"></script>
+    <script src="{% static 'assets/js/imgfix.min.js'%}"></script> 
+    <script src="{% static 'assets/js/slick.js'%}"></script> 
+    <script src="{% static 'assets/js/lightbox.js'%}"></script> 
+    <script src="{% static 'assets/js/isotope.js'%}"></script> 
+    
+    <!-- Global Init -->
+    <script src="{% static 'assets/js/custom.js'%}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+  </body>
+
+</html>

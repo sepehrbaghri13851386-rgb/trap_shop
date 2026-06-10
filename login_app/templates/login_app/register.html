@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Eagle Lake', cursive; /* فونت پیش‌فرض برای بدنه */
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .login-container { /* نام کلاس را برای وضوح بیشتر اضافه کردیم */
+            background-color: rgba(255, 255, 255, 0.1); /* کمی شفافیت به پس‌زمینه div */
+            border: solid rgba(218, 103, 9, 0) 3px;
+            padding: 50px; /* کمی کمتر padding */
+            border-radius: 20px;
+            box-shadow: 0px 0px 13px 15px rgba(206, 111, 2, 0.507);
+            text-align: center; /* متن‌ها را وسط‌چین می‌کنیم */
+        }
+        
+        .input-field { /* کلاس برای فیلدهای ورودی */
+            border-radius: 8px;
+            margin: 5px 0; /* فاصله عمودی */
+            padding: 10px 35px 10px 10px; /* padding داخلی، سمت راست جا برای آیکون */
+            background-color: rgba(255, 255, 255, 0.8); /* کمی رنگ پس‌زمینه */
+            border: none;
+            width: calc(100% - 45px); /* عرض فیلد با در نظر گرفتن padding و آیکون */
+            box-sizing: border-box; /* برای اینکه padding و border در عرض کل حساب شوند */
+        }
+
+        .input-group { /* گروه‌بندی آیکون و اینپوت */
+            position: relative;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group label { /* استایل برای label که آیکون را نگه می‌دارد */
+             position: absolute;
+            left: 10px;
+            color: rgb(17, 0, 252);
+            z-index: 2; /* روی فیلد ورودی باشد */
+            display: flex; /* برای تراز عمودی آیکون */
+            align-items: center;
+        }
+        
+        button {
+            border-radius: 8px;
+            border: solid rgba(10, 145, 5, 0.425) 2px;
+            padding: 10px 5px; /* padding عمودی بیشتر */
+            margin: 15px 0 10px 0; /* فاصله بیشتر */
+            width: 100%; /* دکمه کل عرض را بگیرد */
+            background-color: rgb(226, 17, 28);
+            color: white;
+            font-family: 'Rubik Glitch', cursive; /* فونت Rubik Glitch */
+            font-size: 1.2em; /* فونت بزرگتر */
+            cursor: pointer; /* نشانگر موس */
+            transition: background-color 0.3s ease; /* انیمیشن نرم */
+        }
+        button:hover {
+            background-color: rgb(180, 10, 15); /* رنگ تیره‌تر هنگام هاور */
+        }
+
+        h1 {
+            font-family: 'Nosifer', cursive; /* فونت Nosifer */
+            color: white;
+            font-size: 2.5em; /* فونت بزرگتر */
+            margin-bottom: 30px; /* فاصله پایین */
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* سایه متن */
+        }
+        
+        p {
+            color: white;
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+        p a {
+            color: #fdbb2d; /* رنگ لینک */
+            text-decoration: none; /* حذف زیرخط */
+            font-weight: bold;
+        }
+        p a:hover {
+            text-decoration: underline; /* زیرخط هنگام هاور */
+        }
+
+        /* استایل برای نمایش خطاهای فرم Django */
+        .django-form-errors p {
+            color: #fdbb2d; /* رنگ متفاوت برای خطا */
+            font-size: 0.8em;
+            margin: 5px 0;
+        }
+        .django-form-errors {
+            margin-bottom: 15px;
+        }
+        
+        /* اصلاح استایل input-field برای سازگاری با label */
+        .input-group .input-field {
+             width: 100%; /* عرض کامل در گروه */
+             padding-left: 45px; /* فضای کافی برای آیکون */
+        }
+    </style>
+    <style>.form-group{
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
+    color: #001aff;
+    font-weight: bold;
+}
+
+.form-group input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #002fff;
+    background: #fffafa;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    outline: none
+}
+
+.form-group input:focus{
+    box-shadow: 0 0 10px #002fff;
+}</style>
+</head>
+<body>
+       <style>
+
+h1{
+    color: #1900ff;
+    text-shadow: 0 0 10px #000000;
+}
+
+</style>
+   <div class="container">
+
+    <h1>Register</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form-group">
+
+                <label for="{{ field.id_for_label }}">
+                    {{ field.label }}
+                </label>
+
+                {{ field }}
+
+                {% if field.errors %}
+                    <div class="error-message">
+                        {% for error in field.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+
+        {% if form.non_field_errors %}
+            <div class="error-message">
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <div class="login-link">
+        Already have an account?
+        <a href="{% url 'login' %}">Login</a>
+        
+    </div>
+
+</div>
+</body>
+</html>

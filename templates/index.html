@@ -1,0 +1,361 @@
+{% extends 'base.html '%}
+{% load static %}
+
+{% block contect %}
+
+        <div class="main-banner" id="top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="left-content">
+                            <div class="thumb">
+                                <div class="inner-content">
+                                    <h4>TRAP SHOP </h4>
+                                    <span>+989928784959</span>
+                                    <div class="main-border-button">
+                                        <a href="#">هم اکنون بخرید!</a>
+                                    </div>
+                                </div>
+                                <img src="{% static 'assets/images/b035b605cdb1e5edc5c1922ea4b95697.jpg'%}" alt>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-content">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="right-first-image">
+                                        <div class="thumb">
+                                            <div class="inner-content">
+                                                <h4>women</h4>
+                                                <span>بهترین لباس ها برای زنان</span>
+                                            </div>
+                                            <div class="hover-content">
+                                                <div class="inner">
+                                                    <h4>زنان</h4>
+                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .</p>
+                                                    <div class="main-border-button">
+                                                        <a href="#women">بیشتر پیدا کن</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'assets/images/instagram-03.jpg'%}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="right-first-image">
+                                        <div class="thumb">
+                                            <div class="inner-content">
+                                                <h4>men</h4>
+                                                <span>بهترین لباس ها برای مردان</span>
+                                            </div>
+                                            <div class="hover-content">
+                                                <div class="inner">
+                                                    <h4>Men</h4>
+                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .</p>
+                                                    <div class="main-border-button">
+                                                        <a href="{% url 'prof' %}">بیشتر پیدا کن</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'assets/images/team-member-02.jpg'%}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="right-first-image">
+                                        <div class="thumb">
+                                            <div class="inner-content">
+                                                <h4>kids</h4>
+                                                <span>بهترین لباس ها برای بچه ها</span>
+                                            </div>
+                                            <div class="hover-content">
+                                                <div class="inner">
+                                                    <h4>بچه ها</h4>
+                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .</p>
+                                                    <div class="main-border-button">
+                                                        <a href="#kids">بیشتر پیدا کن</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'assets/images/baner-right-image-03.jpg'%}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="right-first-image">
+                                        <div class="thumb">
+                                            <div class="inner-content">
+                                                <h4>تجهیزات جانبی</h4>
+                                                <span>بهترین لوازم جانبی ترند</span>
+                                            </div>
+                                            <div class="hover-content">
+                                                <div class="inner">
+                                                    <h4>تجهیزات جانبی</h4>
+                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .</p>
+                                                    <div class="main-border-button">
+                                                        <a href="#">بیشتر پیدا کن</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'assets/images/IMG_8210.png'%}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ***** Men Area Starts ***** -->
+        <section class="section" id="men">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <h2 class="text-right">جدیدترین برای مردان</h2>
+                            <span class="text-right">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="men-item-carousel">
+                            <div class="owl-men-item owl-carousel">
+                                {% for item in men_products %}
+                                <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="{% url 'home_kharid' item.id %}"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4 class="text-right">{{ item.title }}</h4>
+                                        <span class="text-right">{{ item.ghymat }}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Men Area Ends ***** -->
+
+        <!-- ***** Women Area Starts ***** -->
+        <section class="section" id="women">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <h2 class="text-right">جدیدترین برای زنان</h2>
+                            <span class="text-right">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="women-item-carousel">
+                            <div class="owl-women-item owl-carousel">
+                                {% for item in women_products %}
+                                <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="{% url 'home_kharid' item.id %}"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4 class="text-right">{{ item.title }}</h4>
+                                        <span class="text-right">{{ item.ghymat }}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Women Area Ends ***** -->
+
+        <!-- ***** Kids Area Starts ***** -->
+        <section class="section" id="kids">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="section-heading">
+                            <h2 class="text-right">جدیدترین برای بچه ها</h2>
+                            <span class="text-right">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="kid-item-carousel">
+                            <div class="owl-kid-item owl-carousel">
+                                {% for item in kids_products %}
+                                <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="{% url 'home_kharid' item.id %}"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4 class="text-right">{{ item.title }}</h4>
+                                        <span class="text-right">{{ item.ghymat }}</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Kids Area Ends ***** -->
+
+        <!-- ***** Social Area Starts ***** -->
+        <section class="section" id="social">
+            <div class="container">
+                <div class="row images">
+                    <div class="col-2">
+                        <div class="thumb">
+                            <div class="icon">
+                                <a href="http://instagram.com"><h6>مد</h6><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <img src="{% static 'assets/images/instagram-01.jpg'%}" alt>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="thumb">
+                            <div class="icon">
+                                <a href="http://instagram.com"><h6>جدید</h6><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <img src="{% static 'assets/images/instagram-02.jpg'%}" alt>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="thumb">
+                            <div class="icon">
+                                <a href="http://instagram.com"><h6>برند</h6><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <img src="{% static 'assets/images/instagram-03.jpg'%}" alt>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="thumb">
+                            <div class="icon">
+                                <a href="http://instagram.com"><h6>آرایشی</h6><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <img src="{% static 'assets/images/instagram-04.jpg'%}" alt>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="thumb">
+                            <div class="icon">
+                                <a href="http://instagram.com"><h6>چرم</h6><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <img src="{% static 'assets/images/instagram-05.jpg'%}" alt>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="thumb">
+                            <div class="icon">
+                                <a href="http://instagram.com"><h6>کیف</h6><i class="fa fa-instagram"></i></a>
+                            </div>
+                            <img src="{% static 'assets/images/instagram-06.jpg'%}" alt>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ***** Social Area Ends ***** -->
+
+        <footer>
+            <div class="comments-section">
+                <h3>نظرات کاربران</h3>
+                {% for comment in comments %}
+                <div class="comment-card">
+                    <h4>{{ comment.name }}</h4>
+                    <p>{{ comment.message }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </footer>
+
+        <script src="assets/js/jquery-2.1.0.min.js"></script>
+        <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+        <script src="{% static 'assets/js/owl-carousel.js'%}"></script>
+        <script src="{% static 'assets/js/accordions.js'%}"></script>
+        <script src="{% static 'assets/js/datepicker.js'%}"></script>
+        <script src="{% static 'assets/js/scrollreveal.min.js'%}"></script>
+        <script src="{% static 'assets/js/waypoints.min.js'%}"></script>
+        <script src="{% static 'assets/js/jquery.counterup.min.js'%}"></script>
+        <script src="{% static 'assets/js/imgfix.min.js'%}"></script>
+        <script src="{% static 'assets/js/slick.js'%}"></script>
+        <script src="{% static 'assets/js/lightbox.js'%}"></script>
+        <script src="{% static 'assets/js/isotope.js'%}"></script>
+        <script src="{% static 'assets/js/custom.js'%}"></script>
+
+        <script>
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+                setTimeout(function() {
+                    $("."+selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+            });
+        });
+        </script>
+
+    </body>
+</html>
+
+{% endblock %}
