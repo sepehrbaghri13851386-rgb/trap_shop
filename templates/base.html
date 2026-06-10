@@ -21,6 +21,50 @@
         <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
         <style>
+            /* ===== OVERRIDE TEMPLATEMO NAV STYLES ===== */
+            /* templatemo adds background, border-radius, padding to nav li a — reset all of it */
+            header .main-nav ul.nav > li > a,
+            header .main-nav ul.nav > li.scroll-to-section > a {
+                background: transparent !important;
+                background-color: transparent !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                padding: 6px 10px !important;
+                font-size: 14px !important;
+                font-weight: 500 !important;
+                color: #333 !important;
+                display: inline-block !important;
+                line-height: 1.4 !important;
+            }
+
+            header .main-nav ul.nav > li > a:hover,
+            header .main-nav ul.nav > li.scroll-to-section > a:hover {
+                color: #ff1a1a !important;
+                background: transparent !important;
+            }
+
+            header .main-nav ul.nav > li.submenu > a {
+                background: transparent !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                color: #333 !important;
+                font-size: 14px !important;
+                font-weight: 500 !important;
+                padding: 6px 10px !important;
+            }
+
+            /* Reset any templatemo li styles too */
+            header .main-nav ul.nav > li {
+                background: transparent !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                list-style: none !important;
+                display: inline-block !important;
+            }
+
             /* ===== RESPONSIVE NAV STYLES ===== */
 
             .trap-logo {
@@ -209,11 +253,22 @@
                     width: 100%;
                 }
 
-                .main-nav ul.nav li a {
-                    display: block;
-                    padding: 10px 12px;
-                    font-size: 15px;
-                    border-bottom: 1px solid #f2f2f2;
+                .main-nav ul.nav li a,
+                header .main-nav ul.nav > li > a,
+                header .main-nav ul.nav > li.scroll-to-section > a,
+                header .main-nav ul.nav > li.submenu > a {
+                    display: block !important;
+                    padding: 11px 14px !important;
+                    font-size: 15px !important;
+                    border-bottom: 1px solid #f2f2f2 !important;
+                    background: transparent !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                    border-top: none !important;
+                    border-left: none !important;
+                    border-right: none !important;
+                    color: #333 !important;
+                    width: 100% !important;
                 }
 
                 /* Mobile submenu always visible */
