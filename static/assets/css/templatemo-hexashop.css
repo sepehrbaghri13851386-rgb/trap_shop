@@ -3272,4 +3272,44 @@ p{
     font-size:15px !important;
 }
 
+}/* ===== Mobile Menu ===== */
+@media (max-width:768px){
+
+.navbar,
+.main-menu,
+.menu,
+.nav{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:8px !important;
+    padding:10px !important;
+}
+
+.navbar a,
+.main-menu a,
+.menu a,
+.nav a{
+    width:auto !important;
+    min-width:90px !important;
+    padding:10px 15px !important;
+    font-size:14px !important;
+    text-align:center !important;
+    border-radius:25px !important;
+    margin:3px !important;
+}
+
+.logo img{
+    width:70px !important;
+    height:70px !important;
+}
+
+.logo{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    margin-bottom:10px;
+}
+
 }
