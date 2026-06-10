@@ -1,168 +1,323 @@
 {% load static %}
- 
- 
- 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
     <head>
-
         <meta charset="utf-8">
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content>
         <meta name="author" content>
-        <link
-            href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-        <title>هگزاشاپ</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+        <title>{% block title %}هگزاشاپ{% endblock %}</title>
 
-        <!-- Additional CSS Files -->
-        <link rel="stylesheet" type="text/css"
-            href="{% static 'assets/css/bootstrap.min.css'%}">
-
-        <link rel="stylesheet" type="text/css"
-            href="{% static 'assets/css/font-awesome.css'%}">
-
-        <link rel="stylesheet"
-            href="{% static 'assets/css/templatemo-hexashop.css'%}">
-
-        <link rel="stylesheet"
-            href="{% static 'assets/css/templatemo-hexashop.css'%}">
-
+        <!-- CSS Files -->
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/templatemo-hexashop.css'%}">
         <link rel="stylesheet" href="{% static 'assets/css/lightbox.css'%}">
-
         <link rel="stylesheet" href="{% static 'assets/css/fonts.css'%}">
-        <!--
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
-           <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <style>
+            /* ===== RESPONSIVE NAV STYLES ===== */
 
--->
+            .trap-logo {
+                font-family: 'Rubik Mono One', sans-serif;
+                font-size: 28px;
+                color: #ff1a1a;
+                letter-spacing: 1px;
+                -webkit-text-stroke: 1px black;
+                text-shadow: 0 0 5px #ff0000, 2px 2px 0 black;
+                white-space: nowrap;
+            }
+
+            .logo a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+            }
+
+            .logo img {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-left: 10px;
+                margin-right: 0;
+                flex-shrink: 0;
+            }
+
+            /* Profile box */
+            .profile-box {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .profile-box img {
+                border-radius: 50%;
+                flex-shrink: 0;
+            }
+
+            .profile-box span {
+                font-size: 13px;
+                color: #333;
+                white-space: nowrap;
+            }
+
+            .logout-btn {
+                font-size: 12px;
+                color: #ff1a1a !important;
+                border: 1px solid #ff1a1a;
+                padding: 3px 8px;
+                border-radius: 4px;
+                white-space: nowrap;
+            }
+
+            /* ===== HAMBURGER BUTTON ===== */
+            .mobile-menu-btn {
+                display: none;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+                flex-direction: column;
+                gap: 5px;
+                z-index: 9999;
+            }
+
+            .mobile-menu-btn span {
+                display: block;
+                width: 26px;
+                height: 3px;
+                background: #333;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            /* ===== DESKTOP NAV ===== */
+            .main-nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 0;
+                position: relative;
+            }
+
+            .main-nav ul.nav {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 4px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .main-nav ul.nav li a {
+                font-size: 14px;
+                padding: 6px 10px;
+                color: #333;
+                text-decoration: none;
+                white-space: nowrap;
+            }
+
+            .main-nav ul.nav li a:hover {
+                color: #ff1a1a;
+            }
+
+            /* Submenu */
+            .main-nav ul.nav li.submenu {
+                position: relative;
+            }
+
+            .main-nav ul.nav li.submenu ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                border-radius: 6px;
+                min-width: 160px;
+                list-style: none;
+                padding: 8px 0;
+                z-index: 9999;
+            }
+
+            .main-nav ul.nav li.submenu:hover ul {
+                display: block;
+            }
+
+            .main-nav ul.nav li.submenu ul li a {
+                display: block;
+                padding: 8px 16px;
+                font-size: 13px;
+                color: #333;
+            }
+
+            .main-nav ul.nav li.submenu ul li a:hover {
+                background: #fff5f5;
+                color: #ff1a1a;
+            }
+
+            /* Hide old menu-trigger */
+            a.menu-trigger {
+                display: none !important;
+            }
+
+            /* ===== MOBILE STYLES ===== */
+            @media (max-width: 768px) {
+
+                .mobile-menu-btn {
+                    display: flex;
+                }
+
+                .main-nav {
+                    flex-wrap: wrap;
+                    padding: 10px 0;
+                }
+
+                .main-nav ul.nav {
+                    display: none;
+                    flex-direction: column;
+                    align-items: stretch;
+                    width: 100%;
+                    margin-top: 12px;
+                    border-top: 1px solid #eee;
+                    padding-top: 8px;
+                    gap: 0;
+                }
+
+                .main-nav ul.nav.mobile-open {
+                    display: flex;
+                }
+
+                .main-nav ul.nav li {
+                    width: 100%;
+                }
+
+                .main-nav ul.nav li a {
+                    display: block;
+                    padding: 10px 12px;
+                    font-size: 15px;
+                    border-bottom: 1px solid #f2f2f2;
+                }
+
+                /* Mobile submenu always visible */
+                .main-nav ul.nav li.submenu ul {
+                    display: block !important;
+                    position: static;
+                    box-shadow: none;
+                    background: #fafafa;
+                    border-radius: 0;
+                    padding: 0;
+                    border-right: 3px solid #ff1a1a;
+                    margin: 0;
+                }
+
+                .main-nav ul.nav li.submenu ul li a {
+                    padding: 9px 20px;
+                    font-size: 13px;
+                    border-bottom: 1px solid #eee;
+                }
+
+                .profile-box {
+                    padding: 10px 12px;
+                    border-bottom: 1px solid #f2f2f2;
+                    width: 100%;
+                    flex-wrap: wrap;
+                }
+
+                .trap-logo {
+                    font-size: 22px;
+                }
+
+                .logo img {
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+
+            @media (max-width: 400px) {
+                .trap-logo {
+                    font-size: 18px;
+                }
+            }
+        </style>
     </head>
 
     <body>
 
-        >
-
         <!-- ***** Header Area Start ***** -->
-       
-        <!-- ***** Header Area End ***** -->
-
-        <!-- ***** Main Banner Area Start ***** -->
-
- <header class="header-area header-sticky">
+        <header class="header-area header-sticky">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <nav class="main-nav">
-                            <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 
-<style>
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}" alt="logo">
+                                    <span class="trap-logo">TRAP SHOP</span>
+                                </a>
+                            </div>
 
-.trap-logo{
-    position: relative;
+                            <!-- Hamburger button for mobile -->
+                            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="منو">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
 
-    font-family: 'Rubik Mono One', sans-serif;
-
-    font-size: 34px;
-
-    color: #ff1a1a;
-
-    letter-spacing: 1px;
-
-    -webkit-text-stroke: 1px black;
-
-    text-shadow:
-    0 0 5px #ff0000,
-    2px 2px 0 black;
-}
-
-</style>
-
-
-
-<div class="logo" style="margin-left:-40px;">
-
-    <a href="/" style="
-    display:flex;
-    align-items:center;
-    text-decoration:none;
-    ">
-
-        <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
-             alt="logo"
-
-             style="
-             width:55px;
-             height:55px;
-
-             margin-right:10px;
-
-             object-fit:cover;
-             border-radius:8px;
-             ">
-
-
-        <span class="trap-logo">
-
-            TRAP SHOP
-
-        </span>
-
-    </a>
-
-</div>
-                            </a>
-<title>{% block title %} {% endblock %}</title>
-                            <ul class="nav">
+                            <!-- Nav links -->
+                            <ul class="nav" id="mainNav">
 
                                 {% if user.is_authenticated %}
                                 <li class="profile-box">
-
                                     {% if user.profile.image %}
-                                    <img src="{{ user.profile.image.url }}"
-                                        width="40" height="40"
-                                        style="border-radius:50%;">
+                                    <img src="{{ user.profile.image.url }}" width="38" height="38" style="border-radius:50%;">
                                     {% else %}
-                                    <img src="{% static 'assets/images/images (2).jpg' %}"
-                                        width="40" height="40"
-                                        style="border-radius:50%;">
+                                    <img src="{% static 'assets/images/images (2).jpg' %}" width="38" height="38" style="border-radius:50%;">
                                     {% endif %}
-
                                     <span>{{ user.username }}</span>
-                                    <a href="{% url 'logout' %}"
-                                        class="logout-btn">Logout</a>
-
+                                    <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
                                 </li>
                                 {% endif %}
-                                <li class="scroll-to-section"><a
-                                        href="{% url 'nike' %}">nike</a></li>
-                                <li class="scroll-to-section"><a
-                                        href="{% url 'prof' %}">trap</a></li>
-                                <li class="scroll-to-section"><a
-                                        href="{% url 'contact' %}">contact</a></li>
-                                <li class="scroll-to-section"><a
-                                        href="{% url 'about' %}">about</a></li>
 
-                                        
+                                <li class="scroll-to-section"><a href="{% url 'nike' %}">nike</a></li>
+                                <li class="scroll-to-section"><a href="{% url 'prof' %}">trap</a></li>
+                                <li class="scroll-to-section"><a href="{% url 'contact' %}">contact</a></li>
+                                <li class="scroll-to-section"><a href="{% url 'about' %}">about</a></li>
 
                                 {% if not user.is_authenticated %}
                                 <li class="scroll-to-section">
-                                    <a href="{% url 'login' %}">Login/regaster</a>
+                                    <a href="{% url 'login' %}">Login / Register</a>
                                 </li>
                                 {% endif %}
 
                                 <li class="submenu">
                                     <a href="javascript:;">صفحات</a>
                                     <ul>
-                                        <li><a href="{% url 'contact'%}">درباره
-                                                ما</a></li>
+                                        <li><a href="{% url 'contact'%}">درباره ما</a></li>
                                         <li><a href="kala/prof/">محصولات</a></li>
                                         <li><a href="{% url 'about'%}">my call</a></li>
-                                        
                                     </ul>
                                 </li>
+
                                 <li class="submenu">
                                     <a href="javascript:;">ویژگی ها</a>
                                     <ul>
@@ -171,72 +326,57 @@
                                         <li><a href="#">صفحه ویژگی 3</a></li>
                                     </ul>
                                 </li>
-                                <li class="scroll-to-section"><a
-                                        href="#explore">کاوش</a></li>
-                           
+
+                                <li class="scroll-to-section"><a href="#explore">کاوش</a></li>
+
                             </ul>
-                            <a class='menu-trigger'>
-                                <span>منو</span>
-                            </a>
-                            <!-- ***** Menu End ***** -->
                         </nav>
                     </div>
                 </div>
             </div>
         </header>
+        <!-- ***** Header Area End ***** -->
 
 
-
-    {% block contect %}
-
-
+        {% block contect %}
+        {% endblock %}
 
 
-
-    {% endblock %}
-
-
-
-
-
-
-
+        <!-- ***** Footer ***** -->
         <footer>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-sm-6">
                         <div class="first-item text-right">
-<div class="logo">
-    <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
-         alt="logo"
-         style="width:90px; height:90px; object-fit:cover; border-radius:10px;">
-</div>
+                            <div class="logo" style="margin-bottom:12px;">
+                                <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
+                                     alt="logo"
+                                     style="width:80px; height:80px; object-fit:cover; border-radius:10px;">
+                            </div>
                             <ul>
-                                <li><a href="#">ایران ، تهران ، کریم
-                                        خان</a></li>
+                                <li><a href="#">ایران، تهران، کریم خان</a></li>
                                 <li><a href="#">hexashop@company.com</a></li>
                                 <li><a href="#">061_34-452</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 text-right">
-                        <h4>خريد و دسته بندی</h4>
+                    <div class="col-lg-3 col-sm-6 text-right">
+                        <h4>خرید و دسته‌بندی</h4>
                         <ul>
                             <li><a href="kala/prof">فروش مردانه</a></li>
                             <li><a href="#women">فروش زنانه</a></li>
                             <li><a href="#kids">فروش کودکانه</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 text-right">
-                        <h4>لینک های مفید</h4>
+                    <div class="col-lg-3 col-sm-6 text-right">
+                        <h4>لینک‌های مفید</h4>
                         <ul>
                             <li><a href="">خانه</a></li>
                             <li><a href="{% url 'about' %}">درباره ما</a></li>
                             <li><a href="#">راهنمایی</a></li>
-                            <li><a href="{% url 'about' %}"></a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 text-right">
+                    <div class="col-lg-3 col-sm-6 text-right">
                         <h4>راهنمایی و اطلاعات</h4>
                         <ul>
                             <li><a href="#">راهنمایی</a></li>
@@ -247,21 +387,37 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="under-footer">
-                            <p>
-                                کلیه حقوق محفوظ است
-                            </p>
+                            <p>کلیه حقوق محفوظ است</p>
                             <ul>
-                                <li><a href="#"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i
-                                            class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://www.instagram.com/sepi__en/"><i
-                                            class="fa fa-linkedin"></i></a></li>
-                                <li><a href=""><i
-                                            class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/sepi__en/"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href=""><i class="fa fa-behance"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
+
+        <!-- Mobile menu toggle script -->
+        <script>
+            const btn = document.getElementById('mobileMenuBtn');
+            const nav = document.getElementById('mainNav');
+
+            btn.addEventListener('click', function () {
+                btn.classList.toggle('active');
+                nav.classList.toggle('mobile-open');
+            });
+
+            // Close menu when a non-submenu link is clicked
+            nav.querySelectorAll('li:not(.submenu) a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    btn.classList.remove('active');
+                    nav.classList.remove('mobile-open');
+                });
+            });
+        </script>
+
+    </body>
+</html>
