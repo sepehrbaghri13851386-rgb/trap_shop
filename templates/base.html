@@ -12,7 +12,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
         <title>{% block title %}هگزاشاپ{% endblock %}</title>
 
-        <!-- CSS Files -->
         <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css'%}">
         <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css'%}">
         <link rel="stylesheet" href="{% static 'assets/css/templatemo-hexashop.css'%}">
@@ -21,55 +20,10 @@
         <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
         <style>
-            /* ===== OVERRIDE TEMPLATEMO NAV STYLES ===== */
-            /* templatemo adds background, border-radius, padding to nav li a — reset all of it */
-            header .main-nav ul.nav > li > a,
-            header .main-nav ul.nav > li.scroll-to-section > a {
-                background: transparent !important;
-                background-color: transparent !important;
-                border: none !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                padding: 6px 10px !important;
-                font-size: 14px !important;
-                font-weight: 500 !important;
-                color: #333 !important;
-                display: inline-block !important;
-                line-height: 1.4 !important;
-            }
-
-            header .main-nav ul.nav > li > a:hover,
-            header .main-nav ul.nav > li.scroll-to-section > a:hover {
-                color: #ff1a1a !important;
-                background: transparent !important;
-            }
-
-            header .main-nav ul.nav > li.submenu > a {
-                background: transparent !important;
-                border: none !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                color: #333 !important;
-                font-size: 14px !important;
-                font-weight: 500 !important;
-                padding: 6px 10px !important;
-            }
-
-            /* Reset any templatemo li styles too */
-            header .main-nav ul.nav > li {
-                background: transparent !important;
-                border: none !important;
-                border-radius: 0 !important;
-                box-shadow: none !important;
-                list-style: none !important;
-                display: inline-block !important;
-            }
-
-            /* ===== RESPONSIVE NAV STYLES ===== */
-
+            /* ===== LOGO ===== */
             .trap-logo {
                 font-family: 'Rubik Mono One', sans-serif;
-                font-size: 28px;
+                font-size: 26px;
                 color: #ff1a1a;
                 letter-spacing: 1px;
                 -webkit-text-stroke: 1px black;
@@ -77,31 +31,37 @@
                 white-space: nowrap;
             }
 
-            .logo a {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
+            .header-area .main-nav .logo {
+                line-height: 100px;
             }
 
-            .logo img {
+            .header-area .main-nav .logo a {
+                display: flex !important;
+                align-items: center !important;
+                text-decoration: none !important;
+                line-height: normal;
+                float: none;
+            }
+
+            .header-area .main-nav .logo img {
                 width: 50px;
                 height: 50px;
                 object-fit: cover;
                 border-radius: 8px;
                 margin-left: 10px;
-                margin-right: 0;
                 flex-shrink: 0;
             }
 
-            /* Profile box */
+            /* ===== PROFILE BOX ===== */
             .profile-box {
-                display: flex;
+                display: flex !important;
                 align-items: center;
                 gap: 8px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
             .profile-box img {
-                border-radius: 50%;
                 flex-shrink: 0;
             }
 
@@ -112,203 +72,63 @@
             }
 
             .logout-btn {
-                font-size: 12px;
+                font-size: 12px !important;
                 color: #ff1a1a !important;
-                border: 1px solid #ff1a1a;
-                padding: 3px 8px;
-                border-radius: 4px;
+                border: 1px solid #ff1a1a !important;
+                padding: 3px 8px !important;
+                border-radius: 4px !important;
+                height: auto !important;
+                line-height: normal !important;
                 white-space: nowrap;
+                background: transparent !important;
             }
 
-            /* ===== HAMBURGER BUTTON ===== */
-            .mobile-menu-btn {
-                display: none;
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 8px;
-                flex-direction: column;
-                gap: 5px;
-                z-index: 9999;
-            }
-
-            .mobile-menu-btn span {
-                display: block;
-                width: 26px;
-                height: 3px;
-                background: #333;
-                border-radius: 2px;
-                transition: all 0.3s ease;
-            }
-
-            .mobile-menu-btn.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .mobile-menu-btn.active span:nth-child(2) {
-                opacity: 0;
-            }
-            .mobile-menu-btn.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-            /* ===== DESKTOP NAV ===== */
-            .main-nav {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 12px 0;
-                position: relative;
-            }
-
-            .main-nav ul.nav {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: 4px;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .main-nav ul.nav li a {
-                font-size: 14px;
-                padding: 6px 10px;
-                color: #333;
-                text-decoration: none;
-                white-space: nowrap;
-            }
-
-            .main-nav ul.nav li a:hover {
-                color: #ff1a1a;
-            }
-
-            /* Submenu */
-            .main-nav ul.nav li.submenu {
-                position: relative;
-            }
-
-            .main-nav ul.nav li.submenu ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                background: #fff;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-                border-radius: 6px;
-                min-width: 160px;
-                list-style: none;
-                padding: 8px 0;
-                z-index: 9999;
-            }
-
-            .main-nav ul.nav li.submenu:hover ul {
-                display: block;
-            }
-
-            .main-nav ul.nav li.submenu ul li a {
-                display: block;
-                padding: 8px 16px;
-                font-size: 13px;
-                color: #333;
-            }
-
-            .main-nav ul.nav li.submenu ul li a:hover {
-                background: #fff5f5;
-                color: #ff1a1a;
-            }
-
-            /* Hide old menu-trigger */
-            a.menu-trigger {
-                display: none !important;
-            }
-
-            /* ===== MOBILE STYLES ===== */
-            @media (max-width: 768px) {
-
-                .mobile-menu-btn {
-                    display: flex;
+            /* ===== MOBILE: header height auto ===== */
+            @media (max-width: 767px) {
+                .header-area {
+                    height: auto !important;
+                    min-height: 70px !important;
+                    padding-bottom: 10px !important;
                 }
 
-                .main-nav {
-                    flex-wrap: wrap;
-                    padding: 10px 0;
+                .header-area .main-nav .logo {
+                    line-height: normal !important;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    float: right !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    height: 70px;
                 }
 
-                .main-nav ul.nav {
-                    display: none;
-                    flex-direction: column;
-                    align-items: stretch;
-                    width: 100%;
-                    margin-top: 12px;
-                    border-top: 1px solid #eee;
-                    padding-top: 8px;
-                    gap: 0;
+                .header-area .main-nav .logo a {
+                    line-height: normal !important;
                 }
 
-                .main-nav ul.nav.mobile-open {
-                    display: flex;
+                .trap-logo {
+                    font-size: 20px;
                 }
 
-                .main-nav ul.nav li {
-                    width: 100%;
+                .header-area .main-nav .logo img {
+                    width: 40px;
+                    height: 40px;
                 }
 
-                .main-nav ul.nav li a,
-                header .main-nav ul.nav > li > a,
-                header .main-nav ul.nav > li.scroll-to-section > a,
-                header .main-nav ul.nav > li.submenu > a {
-                    display: block !important;
-                    padding: 11px 14px !important;
-                    font-size: 15px !important;
-                    border-bottom: 1px solid #f2f2f2 !important;
-                    background: transparent !important;
-                    border-radius: 0 !important;
-                    box-shadow: none !important;
-                    border-top: none !important;
-                    border-left: none !important;
-                    border-right: none !important;
-                    color: #333 !important;
-                    width: 100% !important;
-                }
-
-                /* Mobile submenu always visible */
-                .main-nav ul.nav li.submenu ul {
-                    display: block !important;
-                    position: static;
-                    box-shadow: none;
-                    background: #fafafa;
-                    border-radius: 0;
-                    padding: 0;
-                    border-right: 3px solid #ff1a1a;
-                    margin: 0;
-                }
-
-                .main-nav ul.nav li.submenu ul li a {
-                    padding: 9px 20px;
-                    font-size: 13px;
-                    border-bottom: 1px solid #eee;
-                }
-
+                /* profile box on mobile */
                 .profile-box {
-                    padding: 10px 12px;
-                    border-bottom: 1px solid #f2f2f2;
-                    width: 100%;
                     flex-wrap: wrap;
+                    padding: 10px 15px !important;
+                    height: auto !important;
+                    line-height: normal !important;
+                    background: #f7f7f7 !important;
+                    border-bottom: 1px solid #eee !important;
                 }
 
-                .trap-logo {
-                    font-size: 22px;
-                }
-
-                .logo img {
-                    width: 42px;
-                    height: 42px;
-                }
-            }
-
-            @media (max-width: 400px) {
-                .trap-logo {
-                    font-size: 18px;
+                /* menu-trigger position fix for RTL */
+                .header-area .main-nav .menu-trigger {
+                    left: 15px !important;
+                    right: auto !important;
+                    top: 18px !important;
                 }
             }
         </style>
@@ -331,22 +151,15 @@
                                 </a>
                             </div>
 
-                            <!-- Hamburger button for mobile -->
-                            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="منو">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-
                             <!-- Nav links -->
-                            <ul class="nav" id="mainNav">
+                            <ul class="nav">
 
                                 {% if user.is_authenticated %}
                                 <li class="profile-box">
                                     {% if user.profile.image %}
-                                    <img src="{{ user.profile.image.url }}" width="38" height="38" style="border-radius:50%;">
+                                    <img src="{{ user.profile.image.url }}" width="36" height="36" style="border-radius:50%;">
                                     {% else %}
-                                    <img src="{% static 'assets/images/images (2).jpg' %}" width="38" height="38" style="border-radius:50%;">
+                                    <img src="{% static 'assets/images/images (2).jpg' %}" width="36" height="36" style="border-radius:50%;">
                                     {% endif %}
                                     <span>{{ user.username }}</span>
                                     <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
@@ -385,6 +198,12 @@
                                 <li class="scroll-to-section"><a href="#explore">کاوش</a></li>
 
                             </ul>
+
+                            <!-- templatemo original menu trigger (hamburger) -->
+                            <a class='menu-trigger'>
+                                <span>منو</span>
+                            </a>
+
                         </nav>
                     </div>
                 </div>
@@ -403,7 +222,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-6">
                         <div class="first-item text-right">
-                            <div class="logo" style="margin-bottom:12px;">
+                            <div class="logo" style="margin-bottom:12px; line-height:normal !important;">
                                 <img src="{% static 'assets/images/IMG_20260530_020428_661.jpg' %}"
                                      alt="logo"
                                      style="width:80px; height:80px; object-fit:cover; border-radius:10px;">
@@ -455,22 +274,36 @@
             </div>
         </footer>
 
-        <!-- Mobile menu toggle script -->
+        <!-- templatemo JS for mobile menu toggle -->
+        <script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
         <script>
-            const btn = document.getElementById('mobileMenuBtn');
-            const nav = document.getElementById('mainNav');
+            // Mobile menu toggle (templatemo style)
+            $(document).ready(function() {
+                var navToggle = $(".menu-trigger");
 
-            btn.addEventListener('click', function () {
-                btn.classList.toggle('active');
-                nav.classList.toggle('mobile-open');
-            });
+                navToggle.on("click", function() {
+                    var nav = $(".header-area .main-nav .nav");
+                    var menuTrigger = $(".menu-trigger");
 
-            // Close menu when a non-submenu link is clicked
-            nav.querySelectorAll('li:not(.submenu) a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    btn.classList.remove('active');
-                    nav.classList.remove('mobile-open');
+                    if (nav.is(":visible")) {
+                        nav.slideUp(300);
+                        menuTrigger.removeClass("active");
+                    } else {
+                        nav.slideDown(300);
+                        menuTrigger.addClass("active");
+                    }
                 });
+
+                // Submenu toggle on mobile
+                if ($(window).width() < 767) {
+                    $(".header-area .main-nav .nav li.submenu a").on("click", function() {
+                        var submenu = $(this).siblings("ul");
+                        if (submenu.length) {
+                            submenu.toggleClass("active");
+                        }
+                    });
+                }
             });
         </script>
 
