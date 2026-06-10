@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-0o##of678&q-aoor0cc9itsb-b(8%2bj0(2py6wdwmwba6hz!+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "trap-shop.onrender.com",
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
